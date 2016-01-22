@@ -853,6 +853,48 @@
       this.stop().restore();
       return this;
     };
+    
+        /**
+      Scroll at the top with an offset value
+      @method smoothScrollTop
+      @param offsetY {Number}
+      @chainable
+      @example
+          $(".nano").nanoScroller({ scrollTop: value });
+     */
+
+    NanoScroll.prototype.smoothScrollTop = function(offsetY) {
+      if (!this.isActive) {
+        return;
+      }
+
+      $(this.$content).animate({
+        scrollTop: +offsetY
+      }, 1000);
+      this.$content.trigger(MOUSEWHEEL);
+      this.stop().restore();
+      return this;
+    };
+
+
+    /**
+     Scroll to an element
+     @method smoothScrollTo
+     @param node {Node} A node to scroll to.
+     @chainable
+     @example
+     $(".nano").nanoScroller({ scrollTo: $('#a_node') });
+     */
+
+    NanoScroll.prototype.smoothScrollTo= function(node) {
+      if (!this.isActive) {
+        return;
+      }
+
+
+      this.smoothScrollTop(this.$el.find(node).get(0).offsetTop);
+      return this;
+    };
 
 
     /**
