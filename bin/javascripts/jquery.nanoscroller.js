@@ -2,15 +2,7 @@
 * http://jamesflorentino.github.com/nanoScrollerJS/
 * Copyright (c) 2015 James Florentino; Licensed MIT */
 (function(factory) {
-  if (typeof define === 'function' && define.amd) {
-    return define(['jquery'], function($) {
-      return factory($, window, document);
-    });
-  } else if (typeof exports === 'object') {
-    return module.exports = factory(require('jquery'), window, document);
-  } else {
     return factory(jQuery, window, document);
-  }
 })(function($, window, document) {
   "use strict";
   var BROWSER_IS_IE7, BROWSER_SCROLLBAR_WIDTH, DOMSCROLL, DOWN, DRAG, ENTER, KEYDOWN, KEYUP, MOUSEDOWN, MOUSEENTER, MOUSEMOVE, MOUSEUP, MOUSEWHEEL, NanoScroll, PANEDOWN, RESIZE, SCROLL, SCROLLBAR, TOUCHMOVE, UP, WHEEL, cAF, defaults, getBrowserScrollbarWidth, hasTransform, isFFWithBuggyScrollbar, rAF, transform, _elementStyle, _prefixStyle, _vendor;
